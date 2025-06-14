@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Projeto Fortes - Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0D7339;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+      right: auto;
+
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background: #08592B;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login-container button:hover {
+      background: #0056b3;
+    }
+
+    .login-container .link {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.9em;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 0.9em;
+      text-align: center;
+    }
+    p{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <p><img src="imagens/logo.png" alt="logo"></p>
+    <h2>Projeto Fortes</h2>
+    <div class="error-message" id="error-message"></div>
+    <input type="text" id="usuario" placeholder="E-mail">
+    <input type="password" id="senha" placeholder="Senha">
+    <button onclick="login()">Entrar</button>
+    <a href="esquecisenha.html" class="link">Esqueci minha senha</a>
+    <a href="cadastro.html" class="link">Cadastre-se</a>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById("usuario").value;
+      const password = document.getElementById("senha").value;
+      const errorMessage = document.getElementById("error-message");
+
+      if (username === "admin@fortes.com.br" && password === "123456") {
+        window.location.href = "empresa.html";
+      } else {
+        errorMessage.textContent = "Usuário ou senha incorretos.";
+      }
+
+       if (username === "cooperativas@fortes.com.br" && password === "123456") {
+        window.location.href = "usuario.html";
+      } else {
+        errorMessage.textContent = "Usuário ou senha incorretos.";
+      }
+    }
+  </script>
+
+</body>
+</html>
