@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Projeto Fortes</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0E6836;
+      color: white;
+    }
+
+    .main-content {
+      padding: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+      transition: all 0.3s ease;
+    }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+ 
+    }
+
+    ul {
+      margin: 10px 0 20px 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .nome {
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    /* Barra lateral fixa à direita */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: 100vh;
+      background-color: #08592B;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      z-index: 999;
+    }
+
+    .sidebar img.icon {
+      width: 24px;
+      margin: 20px 0;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .sidebar img.icon:hover {
+      transform: scale(1.2);
+    }
+
+    .circle {
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border-radius: 50%;
+      margin-top: 20px;
+    }
+    .logo2{
+      width: 1000px;
+      margin: 0 auto;
+      transition: all 0.3s ease;
+     
+        
+    }
+
+ 
+  </style>
+
+</head>
+<body>
+    <div class="logo2" id="logo">
+
+        <img src="imagens/logo2.png" width="150"/>
+
+    </div>
+
+    <div class="main-content" id="mainContent">
+    
+
+    <h1>Bem vindo, <span class="nome" id="userName">{User}</span>!</h1>
+
+    <p>
+      A <strong>Econnect</strong> conecta organizações sociais que produzem resíduos com empresas 
+      especializadas na coleta e reaproveitamento desses materiais.Para que esse processo 
+      seja eficiente e sustentável, é essencial que o descarte seja feito da maneira correta.
+      Como realizar o descarte adequado:
+    </p>
+
+    <ul>
+      <li>Separe os resíduos: organize os materiais de acordo com sua natureza: 
+        recicláveis (plásticos, vidros, papéis, metais), orgânicos e rejeitos. Isso facilita a coleta e o 
+        reaproveitamento</li>
+
+      <li>Faça a limpeza básica: antes do descarte, higienize embalagens e outros recicláveis. 
+        Assim, evitamos a contaminação e garantimos a possibilidade de reciclagem.</li>
+
+      <li>Armazene com segurança: utilize recipientes adequados, resistentes e identificados 
+        para cada tipo de resíduo, evitando acidentes e proliferação de pragas.</li>
+
+      <li>Seja transparente: informe claramente a quantidade, o tipo e o local onde os resíduos 
+        estão armazenados. Isso torna a coleta mais eficiente.</li>
+
+      <li>Evite o descarte irregular: nunca descarte resíduos em vias públicas, rios ou terrenos 
+        baldios. O descarte incorreto prejudica o meio ambiente e a saúde pública.</li>
+    </ul>
+
+    <p>
+      Nosso papel é facilitar essa conexão, garantindo que o ciclo de descarte 
+      e reaproveitamento seja responsável, sustentável e legal. Juntos, podemos transformar 
+      resíduos em novas oportunidades, gerando impacto social e ambiental positivo.
+    </p>
+    
+  </div>
+
+  <!-- Barra lateral com ícones -->
+  <div class="sidebar">
+
+    <img src="imagens/perfilempresa.png" class="icon" alt="perfil" onclick="mostrarSecao('perfil')">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" class="icon" alt="inicio" onclick="mostrarSecao('inicio')">
+    <img src="imagens/icone_mensagem.png" class="icon" alt="mensagens" onclick="mostrarSecao('mensagens')">
+    <img src="imagens/icone_mapa.png" class="icon" alt="mapa" onclick="mostrarSecao('mapa')">
+    <img src="imagens/icone_grafico.png" class="icon" alt="grafico" onclick="mostrarSecao('grafico')">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <img src="imagens/icone_saida.png" class="icon" alt="saida" onclick="mostrarSecao('saida')">
+  
+  </div>
+
+  <script>
+    const nomeUsuario = "{User}";
+    document.getElementById("userName").textContent = nomeUsuario;
+
+    function mostrarSecao(secao) {
+      const content = document.getElementById("mainContent");
+
+
+      if (secao === "perfil") {
+        content.innerHTML = `
+        <img src="imagens/perfil.png" class="icon" alt="perfil" style="width:1000px";>
+        
+        `;
+      }
+
+      if (secao === "inicio") {
+        content.innerHTML = `
+        <h1>Bem vindo, <span class="nome" id="userName">{User}</span>!</h1>
+
+    <p>
+      A <strong>Econnect</strong> conecta organizações sociais que produzem resíduos com empresas 
+      especializadas na coleta e reaproveitamento desses materiais.Para que esse processo 
+      seja eficiente e sustentável, é essencial que o descarte seja feito da maneira correta.
+      Como realizar o descarte adequado:
+    </p>
+
+    <ul>
+      <li>Separe os resíduos: organize os materiais de acordo com sua natureza: 
+        recicláveis (plásticos, vidros, papéis, metais), orgânicos e rejeitos. Isso facilita a coleta e o 
+        reaproveitamento</li>
+
+      <li>Faça a limpeza básica: antes do descarte, higienize embalagens e outros recicláveis. 
+        Assim, evitamos a contaminação e garantimos a possibilidade de reciclagem.</li>
+
+      <li>Armazene com segurança: utilize recipientes adequados, resistentes e identificados 
+        para cada tipo de resíduo, evitando acidentes e proliferação de pragas.</li>
+
+      <li>Seja transparente: informe claramente a quantidade, o tipo e o local onde os resíduos 
+        estão armazenados. Isso torna a coleta mais eficiente.</li>
+
+      <li>Evite o descarte irregular: nunca descarte resíduos em vias públicas, rios ou terrenos 
+        baldios. O descarte incorreto prejudica o meio ambiente e a saúde pública.</li>
+    </ul>
+
+    <p>
+      Nosso papel é facilitar essa conexão, garantindo que o ciclo de descarte 
+      e reaproveitamento seja responsável, sustentável e legal. Juntos, podemos transformar 
+      resíduos em novas oportunidades, gerando impacto social e ambiental positivo.
+    </p>
+        `;
+      }
+
+
+      if (secao === "mensagens") {
+        content.innerHTML = `
+        <img src="imagens/mensagem.png" class="icon" alt="perfil" style="width:1000px";>
+
+        `;
+      }
+      if (secao === "mapa") {
+        content.innerHTML = `
+        <img src="imagens/mapa1.png" class="icon" alt="perfil" style="width:1000px;">
+
+        `;
+      }
+      if (secao === "grafico") {
+        content.innerHTML = `
+      <img src="imagens/grafico.png" class="icon" alt="perfil" style="width:1000px;">
+
+        `;
+      }
+      if (secao === "saida") {
+       window.location.href = "saida.html";
+        
+      }
+    }
+  </script>
+</body>
+</html>

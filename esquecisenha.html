@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Projeto Fortes</title>
+  <style>
+   body {
+      font-family: Arial, sans-serif;
+      background: #0D7339;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .reset-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+      right: auto
+        
+    }
+
+    .reset-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .reset-container input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .reset-container button {
+      width: 100%;
+      padding: 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .reset-container button:hover {
+      background: #218838;
+    }
+
+    .message {
+      text-align: center;
+      color: green;
+      margin-top: 10px;
+    }
+
+    .error {
+      text-align: center;
+      color: red;
+      margin-top: 10px;
+    }
+
+    .link {
+      text-align: center;
+      display: block;
+      margin-top: 10px;
+    }
+     p{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="reset-container">
+    <p><img src="imagens/logo.png" alt="logo"></p>
+    <h2>Redefinir Senha</h2>
+    <input type="password" id="novaSenha" placeholder="Nova senha">
+    <input type="password" id="confirmarSenha" placeholder="Confirmar nova senha">
+    <button onclick="redefinirSenha()">Redefinir</button>
+    <div class="error" id="erro"></div>
+    <div class="message" id="mensagem"></div>
+     <a class="link" href="index.html">Voltar ao login</a>
+  </div>
+
+  <script>
+    function redefinirSenha() {
+      const novaSenha = document.getElementById("novaSenha").value;
+      const confirmarSenha = document.getElementById("confirmarSenha").value;
+      const erro = document.getElementById("erro");
+      const mensagem = document.getElementById("mensagem");
+
+      erro.textContent = "";
+      mensagem.textContent = "";
+
+      if (!novaSenha || !confirmarSenha) {
+        erro.textContent = "Preencha todos os campos.";
+        return;
+      }
+
+      if (novaSenha !== confirmarSenha) {
+        erro.textContent = "As senhas não coincidem.";
+        return;
+      }
+
+      // Simulação da redefinição bem-sucedida
+      mensagem.textContent = "Senha redefinida com sucesso!";
+      
+    }
+  </script>
+
+</body>
+</html>
